@@ -2,13 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
 namespace csharpjwt.Controllers
 {
+
+
+
+    [EnableCors("MyPolicy")]
+    [Route("api/[controller]")]
     [ApiController]
-    [Route("[controller]")]
+
     public class WeatherForecastController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
@@ -22,7 +29,7 @@ namespace csharpjwt.Controllers
         {
             _logger = logger;
         }
-
+        [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
