@@ -71,9 +71,9 @@ namespace csharpjwt.Controllers
 
             //Validate the User Credentials
             //Demo Purpose, I have Passed HardCoded User Information
-            if (login.Username == "HK")
+            if (login.Username == "Jignesh")
             {
-                user = new UserModel { Username = "HK", EmailAddress = "hk@gmail.com", DateOfJoing = new DateTime(2010, 08, 02) };
+                user = new UserModel { Username = "Jignesh Trivedi", EmailAddress = "test.btest@gmail.com" };
             }
             return user;
         }

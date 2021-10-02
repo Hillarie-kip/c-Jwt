@@ -18,6 +18,13 @@ namespace csharpjwt.Controllers
 
     public class WeatherForecastController : ControllerBase
     {
+
+
+        SQLHelpers.AgentSQL Sqlhelpers = new SQLHelpers.AgentSQL();
+
+
+
+
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
@@ -29,6 +36,13 @@ namespace csharpjwt.Controllers
         {
             _logger = logger;
         }
+
+
+        
+             
+
+
+
         [Authorize]
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
